@@ -6,12 +6,8 @@ const inputsCheckbox = [...document.querySelectorAll('.container-custom-checkbox
     modalWindow = document.querySelector('.modal-window'),
     submitBtn = document.querySelector('.modal-window__submit-btn');
 
-const subject = document.querySelector('.modal-window__subject'),
-    ingredientsSpan = document.querySelector('.modal-window__ingredients'),
-    drinksSpan = document.querySelector('.modal-window__drinks');
-
-// let startPrice = 4.07;
-
+const subject = document.querySelector('.modal-window__subject');
+let ingredientsArr = [];
 
 /* Add ingredients to pizza*/
 const addIngredients = () => {
@@ -24,13 +20,15 @@ const addIngredients = () => {
                 }
             })
             e.target.closest('.container-custom-checkbox').classList.toggle('active');
-            let choosenIngredients = [...document.querySelectorAll('.container-custom-checkbox.active')];
+            let nameOfIngr = e.target.closest('.container-custom-checkbox').textContent;
             calculateTotal();
-
+            ingredientsArr.push(nameOfIngr.trim());
         })
     })
+
 }
 addIngredients();
+
 
 //add drinks
 const addDrinks = () => {
@@ -38,7 +36,6 @@ const addDrinks = () => {
         drink.addEventListener('click', e => {
             let target = e.target.closest('.select-drink-item');
             target.classList.toggle('active');
-            let choosenDrinks = [...document.querySelectorAll('.select-drink-item.active')];
             calculateTotal();
         })
     })
@@ -53,7 +50,6 @@ const calculateTotal = () => {
     const chooseActive = (el) => {
         el.forEach(item => {
             let totalOfIngredients = Number(item.dataset.value);
-            console.log(totalOfIngredients);
             startPrice += totalOfIngredients;
             return startPrice;
         })
@@ -61,4 +57,42 @@ const calculateTotal = () => {
     chooseActive(choosenIngredients);
     chooseActive(choosenDrinks);
     totalAmount.innerHTML = `${startPrice.toFixed(2)}$`
+}
+
+//make order
+orderBtn.addEventListener('click', () => {
+    modalWindow.classList.remove('none');
+    prepareModal();
+});
+
+window.addEventListener('click', event => {
+    if (event.target === modalWindow) {
+        modalWindow.classList.add('none');
+        window.location.reload();
+    }
+});
+
+submitBtn.addEventListener('click', () => {
+    modalWindow.classList.add('none');
+    showThanksModal();
+    setTimeout(function () {
+        window.location.reload();
+    }, 2000)
+});
+
+const prepareModal = () => {
+    subject.innerHTML = `
+    You ordered drinks and  pizza with ingredients: ${ingredientsArr.toString().toLowerCase()}.
+    <strong style="display: block; margin-top: 10px; color: red">Your total order is ${totalAmount.innerHTML};</strong>
+    `
+}
+
+const showThanksModal = () => {
+    modalWindow.classList.remove('none');
+    submitBtn.style.display = 'none';
+    subject.innerHTML = `
+    <p style="margin-top: 40px; text-align: center">Thank you for your order!
+    <span style="display: block">Soon we will deliver your pizza.</span>
+    </p>
+    `
 }
