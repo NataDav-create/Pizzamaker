@@ -1,24 +1,25 @@
-
-@font-face {
+dough @font-face {
   font-family: "Fira+Sans+Condensed Medium";
-  src: url("fonts/FiraSansCondensed-Medium.ttf"); }
+  src: url("fonts/FiraSansCondensed-Medium.ttf");
+}
 
-html, body {
+html,
+body {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.9);
-  background-color: #0b0c09; 
+  background-color: #0b0c09;
 }
 
 h1 {
   font-style: normal;
   font-weight: 800;
   font-size: 48px;
-  line-height: 56px; 
+  line-height: 56px;
 }
 
 p {
-  margin: 0; 
+  margin: 0;
 }
 
 .none {
@@ -35,35 +36,40 @@ button.typical-btn {
   color: rgba(255, 255, 255, 0.9);
   width: 100%;
   height: 43px;
-  cursor: pointer; 
+  cursor: pointer;
 }
+
 button.typical-btn.make-an-order {
   max-width: 258px;
-  height: 59px; 
+  height: 59px;
 }
 
 .creator-pizza {
   justify-content: center;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
   padding-top: 50px;
 }
+
 .creator-pizza h2 {
   font-style: normal;
   font-weight: 800;
   font-size: 44px;
   line-height: 51px;
   text-align: center;
-  margin-bottom: 45px; 
+  margin-bottom: 45px;
 }
+
 .creator-pizza .topping-item {
   margin-bottom: 20px;
   display: flex;
   justify-content: flex-end;
-  padding-right: 40px; 
+  padding-right: 40px;
 }
+
 .creator-pizza .topping-item:last-child {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
+
 .creator-pizza .topping-item .container-custom-checkbox {
   display: block;
   position: relative;
@@ -77,15 +83,17 @@ button.typical-btn.make-an-order {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; 
+  user-select: none;
 }
+
 .creator-pizza .topping-item .container-custom-checkbox input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
-  width: 0; 
+  width: 0;
 }
+
 .creator-pizza .topping-item .checkmark {
   position: absolute;
   top: -5px;
@@ -93,16 +101,19 @@ button.typical-btn.make-an-order {
   width: 30px;
   background: #0B0C09;
   border: 2px solid rgba(255, 255, 255, 0.9);
-  margin-left: 15px; 
+  margin-left: 15px;
 }
+
 .creator-pizza .topping-item .checkmark:after {
   content: "";
   position: absolute;
-  display: none; 
+  display: none;
 }
-.creator-pizza .topping-item .container-custom-checkbox input:checked ~ .checkmark:after {
-  display: block; 
+
+.creator-pizza .topping-item .container-custom-checkbox input:checked~.checkmark:after {
+  display: block;
 }
+
 .creator-pizza .topping-item .container-custom-checkbox .checkmark:after {
   left: 6px;
   top: 6px;
@@ -111,36 +122,43 @@ button.typical-btn.make-an-order {
   background-image: url("../img/checked.png");
   background-position: center;
   background-size: 15px 15px;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
+
 .creator-pizza .creator-pizza-center {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
+
 .creator-pizza .creator-pizza-left {
   display: flex;
   flex-flow: column;
-  justify-content: center; 
+  justify-content: center;
 }
+
 .creator-pizza .creator-pizza-right {
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  justify-content: center; 
+  justify-content: center;
 }
+
 .creator-pizza .creator-pizza-right .container-custom-checkbox {
-  padding-left: 40px; 
+  padding-left: 40px;
 }
+
 .creator-pizza .creator-pizza-right .checkmark {
   left: 0;
   margin-left: 0;
-  margin-right: 15px; 
+  margin-right: 15px;
 }
+
 .creator-pizza .current-pizza {
   width: 406px;
   height: 406px;
-  position: relative; 
+  position: relative;
 }
+
 .creator-pizza .current-pizza .current-pizza-item {
   width: 100%;
   height: 100%;
@@ -149,50 +167,62 @@ button.typical-btn.make-an-order {
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
-  left: 0; 
+  left: 0;
   display: none;
 }
 
 .creator-pizza .current-pizza .current-pizza-item.active {
   display: block;
 }
-.creator-pizza .current-pizza .current-pizza-item.testo {
-  background-image: url("../img/toppings/testo.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.dough {
+  background-image: url("../img/toppings/testo.png");
   display: block;
 }
-.creator-pizza .current-pizza .current-pizza-item.osnova {
-  background-image: url("../img/toppings/osnova.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.foundation {
+  background-image: url("../img/toppings/osnova.png");
   display: block;
 }
-.creator-pizza .current-pizza .current-pizza-item.vetchina {
-  background-image: url("../img/toppings/vetchina.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.ham {
+  background-image: url("../img/toppings/vetchina.png");
 }
-.creator-pizza .current-pizza .current-pizza-item.bekon {
-  background-image: url("../img/toppings/bekon.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.bakon {
+  background-image: url("../img/toppings/bekon.png");
 }
-.creator-pizza .current-pizza .current-pizza-item.kolbasa {
-  background-image: url("../img/toppings/kolbasa.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.salami {
+  background-image: url("../img/toppings/kolbasa.png");
 }
-.creator-pizza .current-pizza .current-pizza-item.perec {
-  background-image: url("../img/toppings/perec.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.pepper {
+  background-image: url("../img/toppings/perec.png");
 }
-.creator-pizza .current-pizza .current-pizza-item.tomat {
-  background-image: url("../img/toppings/tomat.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.tomato {
+  background-image: url("../img/toppings/tomat.png");
 }
+
 .creator-pizza .current-pizza .current-pizza-item.olives {
-  background-image: url("../img/toppings/olives.png"); 
+  background-image: url("../img/toppings/olives.png");
 }
-.creator-pizza .current-pizza .current-pizza-item.shampinion {
-  background-image: url("../img/toppings/shampinion.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.champignon {
+  background-image: url("../img/toppings/shampinion.png");
 }
-.creator-pizza .current-pizza .current-pizza-item.chiken {
-  background-image: url("../img/toppings/chiken.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.chicken {
+  background-image: url("../img/toppings/chiken.png");
 }
-.creator-pizza .current-pizza .current-pizza-item.ananas {
-  background-image: url("../img/toppings/ananas.png"); 
+
+.creator-pizza .current-pizza .current-pizza-item.pineapple {
+  background-image: url("../img/toppings/ananas.png");
 }
+
 .creator-pizza .current-pizza .current-pizza-item.mozzarella {
-  background-image: url("../img/toppings/mozzarella.png"); 
+  background-image: url("../img/toppings/mozzarella.png");
 }
 
 .select-drink-wrapper {
@@ -200,82 +230,98 @@ button.typical-btn.make-an-order {
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-left: none;
   border-right: none;
-  margin-bottom: 55px; 
+  margin-bottom: 55px;
 }
+
 .select-drink-wrapper .container-fluid {
-  height: 100%; 
+  height: 100%;
 }
+
 .select-drink-wrapper .container-fluid .row {
-  height: 100%; 
+  height: 100%;
 }
+
 .select-drink-wrapper .container-fluid .row .col-12 {
-  height: 100%; 
+  height: 100%;
 }
+
 .select-drink-wrapper .flex-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%; 
+  height: 100%;
 }
+
 .select-drink-wrapper .flex-wrapper .select-drink-item {
   width: 133px;
   height: 133px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   position: relative;
   cursor: pointer;
-  transition: all .2s ease-in-out; 
+  transition: all .2s ease-in-out;
 }
+
 .select-drink-wrapper .flex-wrapper .select-drink-item:hover {
-  border: 2px solid white; 
+  border: 2px solid white;
 }
+
 .select-drink-wrapper .flex-wrapper .select-drink-item.active {
-  border: 2px solid white; 
+  border: 2px solid white;
 }
+
 .select-drink-wrapper .flex-wrapper .select-drink-item img {
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
-.select-drink-wrapper .flex-wrapper .select-drink-item .volume, .select-drink-wrapper .flex-wrapper .select-drink-item .summa {
+
+.select-drink-wrapper .flex-wrapper .select-drink-item .volume,
+.select-drink-wrapper .flex-wrapper .select-drink-item .summa {
   position: absolute;
   bottom: 5px;
   font-style: normal;
   font-weight: 800;
   font-size: 13px;
   line-height: 15px;
-  color: rgba(255, 255, 255, 0.9); 
+  color: rgba(255, 255, 255, 0.9);
 }
+
 .select-drink-wrapper .flex-wrapper .select-drink-item .volume {
-  left: 5px; 
+  left: 5px;
 }
+
 .select-drink-wrapper .flex-wrapper .select-drink-item .summa {
-  right: 5px; 
+  right: 5px;
 }
 
 .option-delivery {
-  margin-bottom: 130px; 
+  margin-bottom: 130px;
 }
+
 .option-delivery .option-delivery-right {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
+
 .option-delivery .total-amount {
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
+
 .option-delivery .total-amount .text {
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 23px;
   color: rgba(255, 255, 255, 0.9);
-  margin-right: 15px; 
+  margin-right: 15px;
 }
+
 .option-delivery .total-amount .summa {
   font-weight: 800;
   font-size: 25px;
   line-height: 29px;
-  color: rgba(255, 255, 255, 0.9); 
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .modal-window {
@@ -313,6 +359,7 @@ button.typical-btn.make-an-order {
     top: -300px;
     opacity: 0
   }
+
   to {
     top: 0;
     opacity: 1
@@ -324,6 +371,7 @@ button.typical-btn.make-an-order {
     top: -300px;
     opacity: 0
   }
+
   to {
     top: 0;
     opacity: 1
